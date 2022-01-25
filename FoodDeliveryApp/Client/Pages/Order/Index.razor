@@ -1,0 +1,124 @@
+﻿@page "/order"
+@*@attribute [Authorize]*@
+@inject IJSRuntime _js
+
+<section class="content-section container">
+    <h2 class="section-header">Personal Pizzas (6")</h2>
+    <div class="shop-items">
+        <div class="shop-item">
+            <span class="shop-item-title">Aloha</span>
+            <img class="shop-item-image" src="images/aloha.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$9.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <span class="shop-item-title">Pepperoni</span>
+            <img class="shop-item-image" src="images/pepperoni.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$9.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <span class="shop-item-title">San Remo</span>
+            <img class="shop-item-image" src="images/sanRemo.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$9.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <span class="shop-item-title">Teriyaki Chicken</span>
+            <img class="shop-item-image" src="images/teriyakiChicken.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$9.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section container">
+    <h2 class="section-header">Beverages</h2>
+    <div class="shop-items">
+        <div class="shop-item">
+            <span class="shop-item-title">Coca-Cola</span>
+            <img class="shop-item-image" src="images/cocaCola.png">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$2.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <span class="shop-item-title">Green Tea</span>
+            <img class="shop-item-image" src="images/greenTea.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$2.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <span class="shop-item-title">Hot Tea</span>
+            <img class="shop-item-image" src="images/tea.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$2.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <span class="shop-item-title">Hot Coffee</span>
+            <img class="shop-item-image" src="images/coffee.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$2.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section container">
+    <h2 class="section-header">Desserts</h2>
+    <div class="shop-items">
+        <div class="shop-item">
+            <span class="shop-item-title">Hot Chocolate Lava Cake</span>
+            <img class="shop-item-image" src="images/chocLavaCake.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$9.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <span class="shop-item-title">Tiramisu</span>
+            <img class="shop-item-image" src="images/tiramisu.jpg">
+            <div class="shop-item-details">
+                <span class="shop-item-price">S$8.90</span>
+                <button class="button shop-item-button" role="button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section container">
+    <h2 class="section-header">CART</h2>
+    <div class="cart-row">
+        <span class="cart-header cart-column cart-item">ITEM</span>
+        <span class="cart-header cart-column cart-price">PRICE</span>
+        <span class="cart-header cart-column cart-quantity">QUANTITY</span>
+    </div>
+    <div class="cart-items"></div>
+    <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+        <span class="cart-total-price">S$0.00</span>
+    </div>
+    <button class="button button-purchase" type="button">PLACE ORDER</button>
+</section>
+
+@code {
+
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await _js.InvokeVoidAsync("ready", "order.js");
+    }
+}

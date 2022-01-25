@@ -1,0 +1,68 @@
+/*.oi {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+*/
+
+* {
+    font-family: 'Work-Sans', sans-serif;
+    box-sizing: border-box;
+    color: #777;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    background-color: rgba(255, 255, 255, .6);
+    background-image: url('images/nicePizzaBackground13_edited.jpg');
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+
+.navv ul {
+    margin: 0;
+}
+
+.navv li {
+    display: inline;
+}
+
+.navv a {
+    display: inline-block;
+    padding: .5em;
+    color: white;
+    text-decoration: none;
+}
+
+.navv a:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.main-nav {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+.main-nav li {
+    padding: 0 5%;
+}
+
+.pizzaria-name {
+    text-align: center;
+    margin: 0;
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+}
+
+.pizzaria-name-large {
+    font-size: 8em;
+}

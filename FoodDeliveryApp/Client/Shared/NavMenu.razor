@@ -1,0 +1,19 @@
+﻿<header class="main-header">
+    <nav class="navv main-nav">
+        <ul>
+            <li><a href="">HOME</a></li>
+            <AuthorizeView>
+                <Authorized>
+                    <li><a href="authentication/profile">Hello, @context.User.Identity.Name!</a></li>
+                    <li><a href="authentication/logout">Log Out</a></li>
+                </Authorized>
+                <NotAuthorized>
+                    <li><a href="authentication/register">Register</a></li>
+                    <li><a href="authentication/login">Log In</a></li>
+                </NotAuthorized>
+            </AuthorizeView>
+            <li><a href="about">ABOUT PEZZO SG</a></li>
+        </ul>
+    </nav>
+    <h1 class="pizzaria-name pizzaria-name-large">PEZZO SG</h1>
+</header>
